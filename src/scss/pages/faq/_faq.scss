@@ -1,0 +1,79 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+.faq {
+  padding: calc(var(--header-height) + 86px) 0 86px;
+  .before--elem {
+    text-align: center;
+    margin: 0 auto 16px;
+    font-weight: 500;
+    &::before {
+      left: 44.5%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  h1 {
+    color: var( --color-brown-800);
+    margin: 0 auto 48px;
+  }
+  &__item {
+    position: relative;
+    border: 2px solid #E3E3E3;
+    padding: 24px 88px 24px 32px;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    div {
+      p {
+        color: var(--color-grey-300);
+      }
+    }
+  }
+  details {
+
+    &[open] {
+
+      summary::before {
+        display: none;
+      }
+
+      summary + div {
+        position: relative;
+        padding: 12px 0 10px;
+        &::before {
+          content: "";
+          position: absolute;
+          right: -48px;
+          top: 30%;
+          transform: translateY(-50%);
+          overflow: hidden;
+          width: 18px;
+          height: 11px;
+          rotate: 0deg;
+          background-image: url("../images/icons/arrow-purple.svg");
+        }
+      }
+    }
+  }
+  summary {
+    position: relative;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 11px;
+      rotate: 180deg;
+      background-image: url("../images/icons/arrow-purple.svg");
+    }
+  }
+
+}

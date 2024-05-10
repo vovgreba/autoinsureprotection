@@ -1,0 +1,53 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+
+.testimonals {
+  padding: 86px 0;
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+  }
+  &__title {
+    max-width: 324px;
+    width: 100%;
+    h2 {
+      margin-bottom: 24px;
+    }
+    p {
+      color: var(--color-grey-300);
+      &:first-of-type {
+        padding-left: 17px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        color: var(--color-brown-800);
+      }
+    }
+  }
+  &__card {
+    background-color: #F6F6F6;
+    padding: 50px 37px;
+    max-width: 411px;
+    p {
+      color: var(--color-grey-300);
+      font-style: italic;
+      font-size: 22px;
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 34px;
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 16px;
+        font-style: normal;
+        line-height: 1.35;
+      }
+    }
+  }
+}

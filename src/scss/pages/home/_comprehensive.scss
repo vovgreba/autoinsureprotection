@@ -1,0 +1,86 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+.comprehensive {
+  padding: 86px 0;
+
+  .before--elem {
+    font-weight: 500;
+    margin: 0 auto 16px;
+    text-align: center;
+    max-width: 400px;
+    &::before {
+      left: -18px;
+    }
+  }
+  h2 {
+    max-width: 658px;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 27px 32px;
+  }
+  &__item {
+    background-color: #F4F4F4;
+    padding: 30px;
+    max-width: 592px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 160px;
+      height: 150px;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    h3 {
+      max-width: 204px;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.27;
+      margin-bottom: 24px;
+    }
+    a {
+      font-weight: 600;
+      color: var(--color-blue-300);
+      transition: color 0.2s;
+      &:hover,
+      &:focus {
+        color: var(--color-green-350);
+      }
+    }
+    &:nth-child(1) {
+      &::after {
+        content: '';
+        background-image: url('../images/home/comprehensive.svg');
+      }
+    }
+    &:nth-child(2) {
+      &::after {
+        content: '';
+        background-image: url('../images/home/collision.svg');
+      }
+    }
+    &:nth-child(3) {
+      &::after {
+        content: '';
+        background-image: url('../images/home/liability.svg');
+      }
+    }
+    &:nth-child(4) {
+      h3 {
+        max-width: 231px;
+      }
+      &::after {
+        content: '';
+        background-image: url('../images/home/additional.svg');
+      }
+    }
+  }
+}

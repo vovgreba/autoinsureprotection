@@ -1,0 +1,121 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+
+.services {
+  padding: 86px 0;
+
+  &__inner {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  h2 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  &__tabs {
+    max-width: 478px;
+    width: 100%;
+    background-color: #F4F4F4;
+    padding: 52px 35px;
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+  [role="tablist"] {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+
+  }
+  [role="tab"] {
+    position: relative;
+    width: 100%;
+    padding: 13.5px 20px;
+    line-height: 1.27;
+    font-size: 20px;
+    background-color: transparent;
+    text-align: left;
+    transition: all 0.4s;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 20px;
+      background-image: url('../images/icons/arrow-black.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 50%;
+      right: 17px;
+      transform: translateY(-50%);
+    }
+  }
+  button[aria-selected="true"] {
+    background-color: var(--color-blue-300);
+    &::after {
+      background-image: url('../images/icons/arrow-white.svg');
+    }
+  }
+
+  &__content {
+    max-width: 688px;
+    width: 100%;
+    img {
+      margin-bottom: 37px;
+    }
+    &--title-big {
+      font-size: 30px;
+      margin-bottom: 3px;
+    }
+    p {
+      color: var(--color-grey-300);
+      &:first-of-type {
+        margin-bottom: 42px;
+      }
+      &:nth-of-type(2) {
+        margin-bottom: 40px;
+      }
+    }
+    h3 {
+      color: var(--color-blue-300);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+  }
+
+  &__benefits {
+    display: flex;
+    gap: 20px;
+    img {
+      max-width: 331px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: var(--color-green-350);
+      margin-bottom: 21px;
+    }
+  }
+  &__lists {
+    li {
+      padding-left: 35px;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      &::before {
+        background-image: url('../images/icons/check.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 27px;
+        height: 27px;
+        background-color: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  &__bottom {
+    background-color: var(--color-brown-800);
+  }
+  &__main {
+    background-color: #fff;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 74px;
+    p {
+      font-size: 16px;
+      color: #fff;
+    }
+    a {
+      color: var(--color-green-350);
+      font-size: 16px;
+      font-weight: 600;
+      &:not(:last-child) {
+      margin-right: 48px;
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .nav__btns {
+    .btn {
+      font-size: 18px;
+      padding: 16px 32px;
+      margin: 0;
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+
+    .btn--user {
+      color: var(--color-blue-300);
+      border: 1px solid var(--color-blue-300);
+      &:hover,
+      &:focus {
+        border-color: var(--color-brown-800);
+        color: var(--color-brown-800);
+      }
+    }
+
+    .request-btn {
+      color: #fff;
+      background-color: var(--color-blue-300);
+      &::after {
+        display: none;
+      }
+      &:hover,
+      &:focus {
+        border-color: var(--color-brown-800);
+        color: var(--color-brown-800);
+        background-color: #fff;
+      }
+    }
+  }
+  &__policy {
+    a {
+      transition: color 0.2s;
+      &:hover,
+      &:focus {
+        color: var(--color-green-550);
+      }
+    }
+  }
+  &__contact {
+    transition: color 0.2s;
+    &:hover,
+    &:focus {
+      color: var(--color-blue-300);
+    }
+  }
+  &.hide {
+    transform: translateY(calc(-100% - 30px));
+  }
+
+  @include media(tablet) {
+    min-height: unset;
+  }
+}
