@@ -17,6 +17,7 @@
     justify-content: center;
     min-height: 815px;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     &::before {
       content: '';
@@ -117,12 +118,12 @@
   }
 
   @include media(mobile-l) {
-    min-height: 600px;
-
+    min-height: calc(var(--header-height) + 600px);
     &__content {
-      padding: 20px;
+      padding: 0;
       h1 {
         text-align: center;
+        margin: 0 auto 20px;
         font-size: 34px;
       }
       p {
@@ -139,11 +140,7 @@
       min-height: 600px;
     }
   }
-  @include media(mobile-s) {
-    &__content {
-      margin-top: -50px;
-    }
-  }
+
 
 }
 

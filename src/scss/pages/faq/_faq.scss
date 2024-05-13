@@ -4,18 +4,20 @@
 .faq {
   padding: calc(var(--header-height) + 86px) 0 86px;
   .before--elem {
+    max-width: 230px;
     text-align: center;
     margin: 0 auto 16px;
     font-weight: 500;
     &::before {
-      left: 44.5%;
+      left: 40px;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateY(-50%);
     }
   }
   h1 {
     color: var( --color-brown-800);
     margin: 0 auto 48px;
+    text-align: center;
   }
   &__item {
     position: relative;
@@ -76,4 +78,15 @@
     }
   }
 
+  @include media(mobile-l) {
+    padding: calc(var(--header-height) + 40px) 0 40px;
+  }
+  @include media(mobile-s) {
+    summary {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
 }

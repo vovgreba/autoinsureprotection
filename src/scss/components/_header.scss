@@ -91,7 +91,18 @@
     transform: translateY(calc(-100% - 30px));
   }
 
-  @include media(tablet) {
-    min-height: unset;
+  @include media(mobile-m) {
+    &__contact {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  @include media(mobile-s) {
+    .logo {
+      max-width: 250px;
+      width: 100%;
+    }
+
   }
 }

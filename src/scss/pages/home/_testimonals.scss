@@ -7,7 +7,14 @@
   &__wrapper {
     display: flex;
     align-items: flex-start;
-    gap: 36px;
+    gap: 37px;
+    border-top: 1px solid #C5C5C5;
+    padding-top: 32px;
+  }
+  &__cards {
+    display: flex;
+    align-items: flex-start;
+    gap: 37px;
   }
   &__title {
     max-width: 324px;
@@ -47,6 +54,33 @@
         font-size: 16px;
         font-style: normal;
         line-height: 1.35;
+      }
+    }
+  }
+  @include media(tablet) {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__title {
+      max-width: unset;
+    }
+    &__card {
+      max-width: unset;
+    }
+  }
+  @include media(mobile-m) {
+    padding: 40px 0;
+    &__cards {
+      flex-direction: column;
+    }
+  }
+  @include media(mobile-s) {
+    .before--elem {
+      text-align: left;
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
       }
     }
   }

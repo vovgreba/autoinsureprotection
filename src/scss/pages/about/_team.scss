@@ -52,4 +52,21 @@
       color: var(--color-grey-300);
     }
   }
+  @include media(mobile-l) {
+    padding: 40px 0;
+    &__items {
+      grid-template-columns: 1fr;
+    }
+    &__item {
+      max-width: unset;
+      img {
+        height: auto;
+      }
+    }
+  }
+  @include media(mobile-s) {
+    .before--elem {
+      max-width: 230px;
+    }
+  }
 }

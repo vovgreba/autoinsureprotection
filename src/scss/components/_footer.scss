@@ -29,6 +29,13 @@
       }
     }
   }
+  .nav__list {
+    margin-right: 0;
+  }
+  .nav__inner {
+    flex-direction: column;
+    gap: 20px;
+  }
 
   .logo {
     display: block;
@@ -90,6 +97,33 @@
   }
 
   @include media(tablet) {
-    min-height: unset;
+    .nav__inner {
+      .nav__btns {
+        flex-direction: row;
+        .btn {
+          &:not(last-child) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  @include media(mobile-l) {
+    &__contact-logo {
+      text-align: center;
+    }
+    .nav {
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+    &__inner {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        text-align: center;
+      }
+    }
   }
 }

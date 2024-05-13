@@ -25,11 +25,24 @@
   &__content {
     padding: 66px 115px;
     background-color: #40DDB633;
+    margin-bottom: 48px;
     p {
       text-align: center;
       font-size: 22px;
       font-style: italic;
       color: var(--color-brown-800);
+    }
+  }
+
+  @include media(mobile-l) {
+    &__content {
+      padding: 30px 60px;
+    }
+  }
+  @include media(mobile-m) {
+    padding: 40px 0;
+    &__content {
+      padding: 20px 40px;
     }
   }
 }

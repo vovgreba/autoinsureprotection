@@ -1,6 +1,11 @@
 @use '../utils/functions/' as *;
 @use '../utils/mixins' as *;
 
+
+* {
+  // outline: 4px solid red !important;
+}
+
 html,
 body {
   scroll-behavior: smooth;
@@ -38,7 +43,11 @@ body {
   max-width: var(--container-width);
 
 }
-
+.main {
+  &--top {
+    padding: calc(var(--header-height)) 0 86px;
+  }
+}
 
 .site-container {
   display: grid;
@@ -54,7 +63,7 @@ body {
 
 .logo {
   width: 100%;
-  max-width: 232px;
+  max-width: 319px;
   font-size: 24px;
 }
 
@@ -70,8 +79,24 @@ body {
     transform: translateY(-50%);
     left: 0;
   }
+  @include media(mobile-s) {
+    max-width: 230px;
+    text-align: center;
+    &::before {
+      top: 13%;
+      left: 20%;
+      transform: translate(0);
+    }
+  }
 }
 
+.before--elem-smal {
+  &::before {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
 
 
 

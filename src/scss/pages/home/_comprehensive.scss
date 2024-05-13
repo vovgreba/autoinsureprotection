@@ -28,6 +28,7 @@
     background-color: #F4F4F4;
     padding: 30px;
     max-width: 592px;
+    width: 100%;
     position: relative;
     &::after {
       content: '';
@@ -83,4 +84,37 @@
       }
     }
   }
+
+  @include media(mobile-l) {
+
+    &__inner {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+  @include media(mobile-m) {
+    padding: 40px 0;
+  }
+
+  @include media(mobile-s) {
+    .before--elem {
+      max-width: 230px;
+    }
+    &__item {
+      h3 {
+        position: relative;
+        z-index: 5;
+      }
+      &::after {
+        z-index: 2;
+        width: 121px;
+        height: 113px;
+      }
+    }
+  }
+
+
+
 }
+
+
