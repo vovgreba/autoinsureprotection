@@ -21,22 +21,26 @@
   label {
     display: block;
     margin-bottom: 16px;
+
     &:last-of-type {
       margin-bottom: 26px;
     }
+    
   }
 
   input,
   textarea {
-    border-color: transparent;
+    border: 1px solid var(--color-white-150);
     padding: 17px;
     width: 100%;
     color: var(--color-brown-800);
-    background-color: #F8F8F8;
+    background-color: var(--color-white-50);
     font-size: 16px;
+
     &::placeholder {
       color: var(--color-brown-800);
     }
+
   }
 
   textarea {
@@ -58,25 +62,29 @@
     align-items: center;
     width: 100%;
     font-size: 16px;
+
     h3 {
       font-size: 25px;
       font-weight: 600;
       margin: 0;
       margin-bottom: 28px;
     }
+
     &-wrap {
       padding: 14px 0;
-      margin-left: -15px;
     }
+
     a {
       display: block;
-      color: var(--color-blue-300);
+      color: var(--color-blue-400);
       text-decoration: underline;
       margin-bottom: 28px;
+
       &:hover,
       &:focus {
         text-decoration: none;
       }
+
     }
   }
 
@@ -93,28 +101,34 @@
     max-width: 282px;
     font-size: 18px;
     line-height: 1.5;
-    color: var(--color-grey-300);
+    color: var(--color-grey-400);
   }
 
   @include media(tablet) {
-    padding: 40px 0 60px;
+    padding: 40px 0;
+
     &__wrapper {
       flex-direction: column;
     }
+
     &__form {
       max-width: unset;
     }
+
     &__info-wrap {
       display: flex;
       gap: 40px;
     }
+
   }
 
 }
 
 @media screen and (max-width: 630px) {
+
   .contact__info-wrap {
     flex-direction: column;
     gap: 0;
   }
+
 }

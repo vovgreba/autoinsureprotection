@@ -4,32 +4,39 @@
 
 .team {
   padding: 86px 0;
-  .before--elem {
+
+  .square {
     font-weight: 500;
     max-width: 423px;
     margin: 0 auto 16px;
+
     &::before {
       left: -19px;
     }
   }
+
   h2 {
     max-width: 658px;
     margin: 0 auto 64px;
     text-align: center;
   }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
+
   &__item {
     position: relative;
     max-width: 384px;
+
     img {
       width: 100%;
-      height: 532px;
+      aspect-ratio: 16 / 22;
     }
   }
+
   &__description {
     position: absolute;
     bottom: 20px;
@@ -37,36 +44,54 @@
     transform: translateX(-50%);
     max-width: 344px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     h3 {
       font-weight: 600;
       font-size: 25px;
       margin-bottom: 4px;
       text-align: center;
     }
+
     p {
-      color: var(--color-grey-300);
+      color: var(--color-grey-400);
     }
+
   }
-  @include media(mobile-l) {
-    padding: 40px 0;
+
+  @include media(tablet) {
+
     &__items {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
     }
+
     &__item {
-      max-width: unset;
-      img {
-        height: auto;
+
+      &:last-child {
+        grid-column: 1 / -1;
       }
     }
   }
+
+  @include media(mobile-l) {
+    padding: 40px 0;
+
+    &__items {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
   @include media(mobile-s) {
-    .before--elem {
+
+    .square {
       max-width: 230px;
     }
+
   }
 }

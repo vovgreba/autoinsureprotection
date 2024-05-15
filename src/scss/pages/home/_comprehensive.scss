@@ -4,15 +4,17 @@
 .comprehensive {
   padding: 86px 0;
 
-  .before--elem {
+  .square {
     font-weight: 500;
     margin: 0 auto 16px;
     text-align: center;
     max-width: 400px;
+
     &::before {
       left: -18px;
     }
   }
+
   h2 {
     max-width: 658px;
     text-align: center;
@@ -24,12 +26,14 @@
     grid-template-columns: 1fr 1fr;
     gap: 27px 32px;
   }
+
   &__item {
-    background-color: #F4F4F4;
+    background-color: var(--color-white-100);
     padding: 30px;
     max-width: 592px;
     width: 100%;
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
@@ -40,6 +44,7 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
     h3 {
       max-width: 204px;
       font-size: 25px;
@@ -47,41 +52,56 @@
       line-height: 1.27;
       margin-bottom: 24px;
     }
+
     a {
       font-weight: 600;
-      color: var(--color-blue-300);
+      color: var(--color-blue-400);
       transition: color 0.2s;
+
       &:hover,
       &:focus {
         color: var(--color-green-350);
       }
     }
+
     &:nth-child(1) {
+
       &::after {
         content: '';
         background-image: url('../images/home/comprehensive.svg');
       }
+
     }
+
     &:nth-child(2) {
+
       &::after {
         content: '';
         background-image: url('../images/home/collision.svg');
       }
+
     }
+
     &:nth-child(3) {
+
       &::after {
         content: '';
         background-image: url('../images/home/liability.svg');
       }
+
     }
+
     &:nth-child(4) {
+
       h3 {
         max-width: 231px;
       }
+
       &::after {
         content: '';
         background-image: url('../images/home/additional.svg');
       }
+
     }
   }
 
@@ -91,25 +111,32 @@
       grid-template-columns: 1fr;
       justify-items: center;
     }
+
   }
+
   @include media(mobile-m) {
     padding: 40px 0;
   }
 
   @include media(mobile-s) {
-    .before--elem {
+
+    .square {
       max-width: 230px;
     }
+
     &__item {
+
       h3 {
         position: relative;
         z-index: 5;
       }
+
       &::after {
         z-index: 2;
         width: 121px;
         height: 113px;
       }
+      
     }
   }
 

@@ -3,47 +3,58 @@
 
 .faq {
   padding: calc(var(--header-height) + 86px) 0 86px;
-  .before--elem {
+
+  .square {
     max-width: 230px;
     text-align: center;
     margin: 0 auto 16px;
     font-weight: 500;
+
     &::before {
       left: 40px;
       top: 50%;
       transform: translateY(-50%);
     }
   }
+
   h1 {
     color: var( --color-brown-800);
     margin: 0 auto 48px;
     text-align: center;
   }
+
   &__item {
     position: relative;
-    border: 2px solid #E3E3E3;
+    border: 2px solid var( --color-white-175);
     padding: 24px 88px 24px 32px;
+
     &:not(:last-child) {
       margin-bottom: 16px;
     }
 
     div {
+
       p {
-        color: var(--color-grey-300);
+        color: var(--color-grey-400);
       }
+
     }
   }
+
   details {
 
     &[open] {
 
-      summary::before {
-        display: none;
+      summary {
+        &::before {
+          display: none;
+        }
       }
 
       summary + div {
         position: relative;
         padding: 12px 0 10px;
+
         &::before {
           content: "";
           position: absolute;
@@ -57,14 +68,17 @@
           background-image: url("../images/icons/arrow-purple.svg");
         }
       }
+
     }
   }
+
   summary {
     position: relative;
     line-height: 1.5;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+
     &::before {
       content: "";
       position: absolute;
@@ -81,10 +95,13 @@
   @include media(mobile-l) {
     padding: calc(var(--header-height) + 40px) 0 40px;
   }
+
   @include media(mobile-s) {
+    
     summary {
       font-size: 14px;
     }
+
     p {
       font-size: 14px;
     }

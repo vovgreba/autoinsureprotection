@@ -1,11 +1,6 @@
 @use '../utils/functions/' as *;
 @use '../utils/mixins' as *;
 
-
-* {
-  // outline: 4px solid red !important;
-}
-
 html,
 body {
   scroll-behavior: smooth;
@@ -13,7 +8,7 @@ body {
 }
 
 .page {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family);
   font-weight: var(--fw-400);
   font-style: normal;
   font-size: clamp(16px, 1vw, 20px);
@@ -22,13 +17,10 @@ body {
   background-color: var(--color-white);
   color: var(--color-brown-800);
   font-optical-sizing: auto;
+
   &__body {
     min-width: 320px;
     min-height: var(--vh);
-  }
-
-  &.background {
-    background-color: var(--color-blue-400);
   }
 
   &.open {
@@ -43,9 +35,11 @@ body {
   max-width: var(--container-width);
 
 }
+
 .main {
+  
   &--top {
-    padding: calc(var(--header-height)) 0 86px;
+    padding-top: 50px;
   }
 }
 
@@ -56,19 +50,14 @@ body {
 }
 
 
-.background {
-  background-color: var(--color-white-150);
-}
-
-
 .logo {
   width: 100%;
   max-width: 319px;
-  font-size: 24px;
 }
 
-.before--elem {
+.square {
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -79,9 +68,11 @@ body {
     transform: translateY(-50%);
     left: 0;
   }
+
   @include media(mobile-s) {
     max-width: 230px;
     text-align: center;
+
     &::before {
       top: 13%;
       left: 20%;
@@ -90,13 +81,6 @@ body {
   }
 }
 
-.before--elem-smal {
-  &::before {
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-  }
-}
 
 
 

@@ -2,59 +2,72 @@
 @use "../utils/mixins/"as*;
 
 .footer {
+
   &__bottom {
+    padding: 25px 0;
     background-color: var(--color-brown-800);
   }
+
   &__main {
-    background-color: #fff;
-    min-height: 150px;
+    padding: 32px 0;
+    background-color: var(--color-white);
     display: flex;
     align-items: center;
   }
+
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 74px;
+
+
     p {
       font-size: 16px;
-      color: #fff;
+      color: var(--color-white);
     }
+
     a {
       color: var(--color-green-350);
       font-size: 16px;
       font-weight: 600;
+
       &:not(:last-child) {
       margin-right: 48px;
       }
+
     }
   }
+
   .nav__list {
     margin-right: 0;
   }
+
   .nav__inner {
-    flex-direction: column;
     gap: 20px;
   }
 
   .logo {
     display: block;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .nav__btns {
+
     .btn {
       font-size: 18px;
       padding: 16px 32px;
       margin: 0;
+
       &:not(:last-child) {
         margin-right: 8px;
       }
+
     }
 
     .btn--user {
-      color: var(--color-blue-300);
-      border: 1px solid var(--color-blue-300);
+      color: var(--color-blue-400);
+      border: 1px solid var(--color-blue-400);
+
       &:hover,
       &:focus {
         border-color: var(--color-brown-800);
@@ -63,44 +76,61 @@
     }
 
     .request-btn {
-      color: #fff;
-      background-color: var(--color-blue-300);
-      &::after {
-        display: none;
-      }
+      color: var(--color-white);
+      background-color: var(--color-blue-400);
+
       &:hover,
       &:focus {
         border-color: var(--color-brown-800);
         color: var(--color-brown-800);
-        background-color: #fff;
+        background-color: var(--color-white);
       }
+
     }
   }
+
   &__policy {
+
     a {
       transition: color 0.2s;
+
       &:hover,
       &:focus {
         color: var(--color-green-550);
       }
+
     }
   }
+
   &__contact {
+    font-size: 20px;
     transition: color 0.2s;
+
     &:hover,
     &:focus {
-      color: var(--color-blue-300);
+      color: var(--color-blue-400);
     }
+
   }
+
   &.hide {
     transform: translateY(calc(-100% - 30px));
   }
 
+  @include media(tablet-wide) {
+    .nav__inner {
+      flex-direction: column;
+    }
+  }
+
   @include media(tablet) {
     .nav__inner {
+
       .nav__btns {
         flex-direction: row;
+
         .btn {
+
           &:not(last-child) {
             margin-bottom: 0;
           }
@@ -108,22 +138,35 @@
       }
     }
   }
+
   @include media(mobile-l) {
+
     &__contact-logo {
       text-align: center;
     }
+
     .nav {
       flex-direction: column;
       gap: 20px;
       padding-bottom: 20px;
     }
+
     &__inner {
       padding: 20px 0;
       flex-direction: column;
       gap: 20px;
+
       p {
         text-align: center;
       }
     }
+  }
+
+  @include media(mobile-s) {
+
+    &__contact {
+      font-size: 16px;
+    }
+    
   }
 }

@@ -7,17 +7,17 @@
 
     <div class="contact__wrapper" id="contact">
 
-      <form class="contact__form">
+      <form class="contact__form" method="post">
         <label>
-          <input id="name" type="text" placeholder="Enter your name">
+          <input id="name" name="username" type="text" placeholder="Enter your name">
         </label>
 
         <label>
-          <input type="text" placeholder="Enter your email address">
+          <input type="text" name="email" placeholder="Enter your email address">
         </label>
 
         <label>
-          <textarea placeholder="Your message..."></textarea>
+          <textarea name="message" placeholder="Your message..."></textarea>
         </label>
 
         <button class="btn btn--reverse" type="submit">
@@ -27,7 +27,6 @@
 
       <div class="contact__info">
         <div class="contact__info-wrap">
-
           <div>
             <h3 class="contact__title">Contacts</h3>
             <a href="mailto:contact@autoinsureprotection.com">contact@autoinsureprotection.com</a>
